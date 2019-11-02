@@ -1,0 +1,36 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package example;
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FieldOptions {
+    bool group1 = 100000;
+    bool group2 = 200000;
+}
+
+message OriginalMessage {
+    //https://developers.google.com/protocol-buffers/docs/proto#customoptions
+    uint32 integerField1 = 1 [(group1) = true];
+    uint32 integerField2 = 2 [(group2) = true];
+    Depth0ComplexField complexField = 3 [(group2) = true];
+    uint32 integerField3 = 4;
+}
+
+message Depth0ComplexField {
+    Depth1ComplexField complexField = 1;
+    string stringField = 2;
+}
+
+message Depth1ComplexField {
+    string stringField = 2;
+}
+
+message ExpectedGroup1 {
+    uint32 integerField1 = 1;
+}
+
+message ExpectedGroup2 {
+    uint32 integerField2 = 2;
+    uint32 complexField_complexField_stringField = 3;
+    uint32 complexField_stringField = 4;
+}
