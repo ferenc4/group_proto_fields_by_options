@@ -24,13 +24,3 @@ message Depth0ComplexField {
 message Depth1ComplexField {
     string stringField = 2;
 }
-
-message ExpectedGroup1 {
-    uint32 integerField1 = 1;
-}
-
-message ExpectedGroup2 {
-    uint32 integerField2 = 2;
-    uint32 complexField_complexField_stringField = 3;
-    uint32 complexField_stringField = 4;
-}
