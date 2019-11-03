@@ -9,17 +9,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Descriptors.DescriptorValidationException, IOException {
         OriginalMessage.getDescriptor().getFields();
-        Descriptors.Descriptor fulldescname = new Descriptors.Descriptor("fulldescname");
-        DescriptorProtos.FileDescriptorProto customFileDescriptorProto = DynamicMessage.newBuilder(DescriptorProtos.FieldDescriptorProto.newBuilder()
-                .setJsonName("fieldname")
-                .setDefaultValue("apple")
-                .build())
-                .build()
-                .getDescriptorForType()
-                .getFile()
-                .toProto();
-        System.out.println("fileDescriptorProto = " + ExpectedGroup1.getDescriptor().getFile().toProto());
-        new ProtoFileWriter(customFileDescriptorProto).writeTo("actual_output.proto");
+
         new ProtoFileWriter(ExpectedGroup1.getDescriptor().getFile().toProto()).writeTo("expected_output.proto");
     }
 

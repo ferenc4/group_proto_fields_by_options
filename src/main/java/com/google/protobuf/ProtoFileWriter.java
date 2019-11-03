@@ -20,7 +20,7 @@ public class ProtoFileWriter {
         fileWriter.close();
     }
 
-    private String getProtoFileDisplay() {
+    public String getProtoFileDisplay() {
         StringJoiner sj = new StringJoiner("\n");
         sj.add(String.format("syntax = \"%s\";", protoDetails.getSyntax()));
         sj.add(String.format("option java_multiple_files = %s;", protoDetails.getOptions().getJavaMultipleFiles()));

@@ -1,0 +1,26 @@
+syntax = "proto3";
+option java_multiple_files = false;
+package actual;
+
+message TestMessage1 {
+	string field1 = 200966539;
+	string field2 = 200966538;
+	string field3 = 200966537;
+	string field4 = 200966536;
+	int32 field5 = 200966535;
+	int32 field6 = 200966534;
+	int32 field7 = 200966533;
+	int32 field8 = 200966532;
+	int32 field9 = 200966531;
+}
+message TestMessage2 {
+	string field1 = 200966539;
+	string field2 = 200966538;
+	string field3 = 200966537;
+	string field4 = 200966536;
+	int32 field5 = 200966535;
+	int32 field6 = 200966534;
+	int32 field7 = 200966533;
+	int32 field8 = 200966532;
+	int32 field9 = 200966531;
+}
