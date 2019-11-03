@@ -16,6 +16,14 @@ message OriginalMessage {
     uint32 integerField3 = 4;
 }
 
+message SimpleMessage {
+    //https://developers.google.com/protocol-buffers/docs/proto#customoptions
+    uint32 integerField1 = 1 [(group1) = true];
+    uint32 integerField2 = 2 [(group2) = true];
+    string integerField3 = 3 [(group2) = true];
+    uint32 integerField4 = 4;
+}
+
 message Depth0ComplexField {
     Depth1ComplexField complexField = 1;
     string stringField = 2;

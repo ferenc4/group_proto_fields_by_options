@@ -16,6 +16,11 @@ public class ProtoMessageDefinitionBuilder {
         return this;
     }
 
+    public ProtoMessageDefinitionBuilder merge(ProtoMessageDefinitionBuilder o) {
+        messageBuilder.mergeFrom(o.messageBuilder.build());
+        return this;
+    }
+
     private int getFieldId(String fieldName) {
         // chance for causing a clash?
         return Math.abs(fieldName.hashCode()) % 536_870_911;
